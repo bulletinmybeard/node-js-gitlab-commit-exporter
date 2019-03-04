@@ -1,0 +1,25 @@
+{
+  "name": "export-gitlab-commits",
+  "version": "1.0.0",
+  "description": "Interactive Node.js application to export commits from GitLab",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.orangegames.com:gamedistribution/export-gitlab-commits.git"
+  },
+  "keywords": [],
+  "author": "Robin Schulz",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.3",
+    "commander": "^2.19.0",
+    "inquirer": "^6.2.2",
+    "json2csv": "^4.3.5",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0"
+  }
+}

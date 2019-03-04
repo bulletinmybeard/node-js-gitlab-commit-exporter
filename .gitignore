@@ -1,0 +1,7 @@
+*.csv
+node_modules
+.DS_STORE
+.idea
+service-account.json
+google-api-keys.json
+google-token.json
