@@ -18,9 +18,9 @@ const path = require('path');
  */
 
 program
-    .version('0.0.0')
-    .option('-s, --since [value]', 'Date from...')
-    .option('-u --until [value]', 'Date to...')
+    .version('0.0.1')
+    .option('-s, --from [value]', 'Date from...')
+    .option('-u --to [value]', 'Date to...')
     .option('-g --group [value]', 'GitLab group name.')
     .option('-f, --filename [value]', 'Filename where the commits will end up.')
     .option('-e, --export [value]', 'Export method of your choice can be either file or google-sheet (WIP).')
@@ -200,12 +200,12 @@ const apiQueryBuilder = (endpoint, queryOptions, page) => {
     }
 
     if(Object.prototype.toString.call(queryOptions) === '[object Array]') {
-        if(queryOptions.includes('until') && program && program.until) {
-            query.until = `${program.until}T00:00:00Z`;
+        if(queryOptions.includes('to') && program && program.to) {
+            query.to = `${program.to}T00:00:00Z`;
         }
 
-        if(queryOptions.includes('since') && program && program.since) {
-            query.since = `${program.since}T00:00:00Z`;
+        if(queryOptions.includes('from') && program && program.from) {
+            query.from = `${program.from}T00:00:00Z`;
         }
 
         if(queryOptions.includes('branch')) {
