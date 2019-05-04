@@ -201,7 +201,7 @@ const apiQueryBuilder = (endpoint, queryOptions, page) => {
 
     if(Object.prototype.toString.call(queryOptions) === '[object Array]') {
         if(queryOptions.includes('to') && program && program.to) {
-            query.to = `${program.to}T00:00:00Z`;
+            query.to = `${program.to}T23:59:59Z`;
         }
 
         if(queryOptions.includes('from') && program && program.from) {
