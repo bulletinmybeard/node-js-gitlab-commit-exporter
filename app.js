@@ -537,13 +537,13 @@ const processExportMethods = async (reOrderedList) => {
         try {
             // Fetch all projects recursively where the user has access to.
             projectList = await getAllGroupedProjects(exportGroups);
-            if(!projectList.length) {
+
+            if(!_.size(projectList)) {
                 console.error('No projects found.');
                 return process.exit(1);
             }
-            // Let's grab the group names..
-            theChosenOnes = projectList.map(p => p.name );
-            // projectListKeysOnly = projectList.map(p => p.name );
+
+            theChosenOnes = await promptProjectSelection(projectList.map(p => p.name ).sort());
         } catch(err) {
             console.error(err);
             return process.exit(1);
